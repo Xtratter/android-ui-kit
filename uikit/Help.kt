@@ -27,7 +27,8 @@ object Help {
         val cornerDp: Float = 20f,
     )
 
-    var style: () -> Style = { Style() }
+    /** Default: colours of the current [M3] theme. */
+    var style: () -> Style = { Style(M3.mix(M3.surface, M3.primary, 0.14f), M3.withAlpha(M3.primary, 0.4f), M3.primary, M3.TEXT) }
     var timeoutMs = 5000L
     /** Called when a bubble appears — e.g. `{ Haptics.play(Haptics.Kind.TICK) }`. */
     var onShow: (() -> Unit)? = { Haptics.play(Haptics.Kind.TICK) }
